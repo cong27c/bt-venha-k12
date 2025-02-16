@@ -1,0 +1,23 @@
+{
+  "name": "json-server",
+  "version": "1.0.0",
+  "description": "how to use json-server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon main.js",
+    "start": "json-server-auth --watch db.json --port 3000"
+  },
+  "keywords": [
+    "json-server"
+  ],
+  "author": "cong nguyen",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "json-server": "0.17.4",
+    "json-server-auth": "^2.1.0"
+  }
+}

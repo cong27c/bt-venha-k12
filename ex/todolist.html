@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1 class="page-heading">Create your Todo-List</h1>
+      <div class="userAccount"></div>
+      <form action="" class="todo-form">
+        <input
+          type="text"
+          id="todo-input"
+          class="input"
+          placeholder="What are your tasks for today?"
+          spellcheck="false"
+        />
+        <button id="submit" class="submit-btn">Add</button>
+      </form>
+      <div class="status-btn-list">
+        <button id="todoList" class="submit-btn">todo</button>
+        <button id="doingList" class="submit-btn">doing</button>
+        <button id="doneList" class="submit-btn">done</button>
+        <button id="allTask" class="submit-btn">All tasks</button>
+        <!-- <button id="deleteAllTasks" class="deleteAllTasks submit-btn"> -->
+        <!-- delete All
+        </button> -->
+      </div>
+
+      <ul id="task-list" class="task-list"></ul>
+    </main>
+    <script src="todolist.js"></script>
+  </body>
+</html>
