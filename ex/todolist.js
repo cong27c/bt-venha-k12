@@ -11,6 +11,7 @@ const allTaskButton = document.querySelector("#allTask");
 
 const userAccount = document.querySelector(".userAccount")
 
+const deleteAllTasksButton = document.getElementById("deleteAllTasks");
 
 const email = JSON.parse(localStorage.getItem("user")).email
 userAccount.innerHTML = email
@@ -131,6 +132,7 @@ async function addTask(e) {
         }
         
         await res.json();
+        value = document.getElementById("todo-input").value = ""
         renderTask();
     } catch (error) {
         console.log(error);
@@ -282,21 +284,29 @@ async function handleTask(e) {
 }
 
 
-function deleteAllTasks() {
-    if (confirm("Are you sure you want to delete all tasks?")) {
-        fetch("http://localhost:3000/task", {
-            method: "DELETE"
-        })
-        .then(res => {
-            if(!res.ok) {
-                throw new Error("Failed to delete task: " + response.statusText)
-            }
-            return res.json()
-        })
-        .then(data => renderTask())
-        .catch(error => console.log(error))
+async function deleteAllTasks() {
+    if (!confirm("Are you sure you want to delete all tasks?")) return;
+
+    try {
+        const res = await fetch("http://localhost:3000/task");
+        if (!res.ok) throw new Error("Failed to fetch tasks");
+
+        const tasks = await res.json();
+
+        const deleteRequests = tasks.map(task => 
+            fetch(`http://localhost:3000/task/${task.id}`, { method: "DELETE" })
+        );
+
+        await Promise.all(deleteRequests);
+
+        renderTask();
+    } catch (error) {
+        console.error("Error deleting all tasks:", error);
     }
 }
+
+
+deleteAllTasksButton.addEventListener("click", deleteAllTasks);
 
 
 todoListButton.addEventListener("click", () => {

@@ -1801,39 +1801,14 @@
   "users": [
     {
       "email": "nguyenvancongcbg27@gmail.com",
-      "password": "$2a$10$86RNtoB109LJ4dqVxi9t8uH1g6o.L3ynHySY/.r8lUMV4tjjKljlW",
+      "password": "$2a$10$kaNcAb7e4PUV.m.jNWlLNeegAw46WrqHAZ1fS1F3jwXc91OQnzyOu",
       "id": 1
     },
     {
-      "email": "1234@gmai.com",
-      "password": "$2a$10$9Km1kTK9GPFHHvlyK88yrelmoZ3WAeSq7OtjHCWkLRc8IstnEI2u2",
+      "email": "nguyenvancongcbg2711@gmail.com",
+      "password": "$2a$10$V1Dif9HPrIClY8Dj/8pbP.0dsvzbqvxsx7jIC9jQP.YPNQDtnijT6",
       "id": 2
     }
   ],
-  "task": [
-    {
-      "name": "123",
-      "priority": "high",
-      "status": "doing",
-      "id": 1
-    },
-    {
-      "name": "22222",
-      "priority": "medium",
-      "status": "todo",
-      "id": 2
-    },
-    {
-      "name": "2333",
-      "status": "done",
-      "priority": "low",
-      "id": 3
-    },
-    {
-      "name": "111",
-      "status": "todo",
-      "priority": "low",
-      "id": 4
-    }
-  ]
+  "task": []
 }
